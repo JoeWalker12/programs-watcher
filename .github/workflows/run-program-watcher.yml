@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+  schedule:
+    - cron: '*/30 * * * *'
+
 jobs:
   run_program_watcher:
     runs-on: ubuntu-latest
@@ -15,3 +18,7 @@ jobs:
 
     - name: Run Docker Compose
       run: docker-compose up -d
+
+    - name: Run Python Script
+      run: |
+        python main.py >> /cron.log 2>&1
