@@ -1,10 +1,6 @@
-name: Run Program Watcher
+name: Program Watcher
 
 on:
-  push:
-    branches:
-      - main
-
   schedule:
     - cron: '*/30 * * * *'
 
@@ -16,9 +12,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: install
-      run: pip3 install -r requirements.txt
+    - name: Set up Docker
+      uses: docker/setup-action@v2
 
-    - name: Run Python Script
+    - name: Build and Run Docker Compose
       run: |
-        python3 main.py 
+        docker-compose up -d
+        docker exec -it $(docker ps -q --filter ancestor=my-python-app) python /app/main.py >> /var/log/cron.log 2>&1
