@@ -15,6 +15,7 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-action@v2
 
+
     - name: Build and Run Docker Compose
       run: |
         docker-compose up -d
