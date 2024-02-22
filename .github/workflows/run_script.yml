@@ -1,0 +1,17 @@
+name: Run Program Watcher
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  run_program_watcher:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Run Python Script
+      run: |
+        python main.py >> /var/log/cron.log 2>&1
