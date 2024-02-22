@@ -1,5 +1,5 @@
 discordWebhook:
-  programs_watcher: <YOUR DISCORD WEBHOOK>
+  programs_watcher: https://discord.com/api/webhooks/1210314369876099104/-NJI8YhCNENGQUeBPbRjpLvtmo3Kn9UYrI_5rI-HFboeH5S9kfA2dVCexaB4JAUBqiHA
 mongoDB:
   uri: mongodb://db:27017/
   database: programs_watcher
