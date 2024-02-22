@@ -1,0 +1,20 @@
+name: Run Program Watcher
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_program_watcher:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Navigate to Program Watcher Directory
+      run: cd programs-watcher
+
+    - name: Run Docker Compose
+      run: docker-compose up -d
