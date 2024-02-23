@@ -1,11 +1,12 @@
-name: Program Watcher
+name: Install Program Watcher
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
-  run_program_watcher:
+  install_program_watcher:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,8 +16,5 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-action@v2
 
-
     - name: Build and Run Docker Compose
-      run: |
-        docker-compose up -d
-        docker exec -it $(docker ps -q --filter ancestor=my-python-app) python /app/main.py >> /var/log/cron.log 2>&1
+      run: docker-compose up -d
