@@ -13,6 +13,7 @@ def check_intigriti(tmp_dir, mUrl, first_time, db, config):
     intigriti = json.load(intigriti)
     for program in intigriti:
         programName = program["name"]
+        logo_id = program.get('logoId', 'default_logo_id')
         logo = f"https://api.intigriti.com/file/api/file/{program['logoId']}"
         programURL = f"https://app.intigriti.com/programs/{program['companyHandle']}/{program['handle']}"
         data = {"programName": programName, "programType": "", "programURL": programURL,
