@@ -13,11 +13,12 @@ def check_intigriti(tmp_dir, mUrl, first_time, db, config):
     intigriti = json.load(intigriti)
     for program in intigriti:
         programName = program["name"]
-        logo_id = program.get('logoId')
-        if logo_id:
-            logo = f"https://api.intigriti.com/file/api/file/{logo_id}"
-        else:
-            logo = "https://cdn.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.webp"  # URL to a default or generic logo
+        logo = "https://api.intigriti.com/file/api/file/{}".format(program['logoId'])
+#        logo_id = program.get('logoId')
+#       if logo_id:
+#            logo = f"https://api.intigriti.com/file/api/file/{logo_id}"
+#        else:
+#            logo = "https://cdn.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.webp"  # URL to a default or generic logo
 #       logo = f"https://api.intigriti.com/file/api/file/{program['logoId']}"
         programURL = f"https://app.intigriti.com/programs/{program['companyHandle']}/{program['handle']}"
         data = {"programName": programName, "programType": "", "programURL": programURL,
