@@ -44,7 +44,7 @@ check_bugcrowd(tmp_dir, discord_webhook, first_time, db, platforms['bugcrowd'])
 check_hackerone(tmp_dir, discord_webhook, first_time, db, platforms['hackerone'])
 
 # checking intigriti
-check_intigriti(tmp_dir, discord_webhook, first_time, db, platforms['intigriti'])
+#check_intigriti(tmp_dir, discord_webhook, first_time, db, platforms['intigriti'])
 
 # checking yeswehack
 check_yeswehack(tmp_dir, discord_webhook, first_time, db, platforms['yeswehack'])
