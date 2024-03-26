@@ -35,14 +35,14 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
             else:
                 for item in target["targets"]:
                     dataJson["inScope"].append((item["name"]))
-
-            if program["rewardSummary"]["minReward"] == "Points" :
-                dataJson["programType"] = "vdp"
-                data["programType"] = "vdp"
+            if program["rewardSummary"]["minReward"] is not None:
+                if program["rewardSummary"]["minReward"] == "Points" :
+                    dataJson["programType"] = "vdp"
+                    data["programType"] = "vdp"
                 
-            elif int(program["rewardSummary"]["minReward"].replace("$", "")) > 0 :
-                dataJson["programType"] = "rdp"
-                data["programType"] = "rdp"
+                elif int(program["rewardSummary"]["minReward"].replace("$", "")) > 0 :
+                    dataJson["programType"] = "rdp"
+                    data["programType"] = "rdp"
             else:
                 dataJson["programType"] = "vdp"
                 data["programType"] = "vdp"
