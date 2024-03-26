@@ -36,15 +36,15 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
                 for item in target["targets"]:
                     dataJson["inScope"].append((item["name"]))
 
-            if program["minReward"] > 0:
+            if program["rewardSummary"]["minReward"] > 0:
                 dataJson["programType"] = "rdp"
                 data["programType"] = "rdp"
             else:
                 dataJson["programType"] = "vdp"
                 data["programType"] = "vdp"
             bounty = {
-                "min": program["minReward"],
-                "max": program["maxReward"]
+                "min": program["rewardSummary"]["minReward"],
+                "max": program["rewardSummary"]["maxReward"]
             }
             dataJson["reward"] = bounty
         newInScope = [i for i in dataJson["inScope"]
