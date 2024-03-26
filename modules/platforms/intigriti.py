@@ -21,7 +21,7 @@ def check_intigriti(tmp_dir, mUrl, first_time, db, config):
 #            logo = "https://cdn.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.webp"  # URL to a default or generic logo
 #       logo = f"https://api.intigriti.com/file/api/file/{program['logoId']}"
         programURL = f"https://app.intigriti.com/{program['webLinks']['detail']}"
-        data = {"programName": programName, "programType": "", "programURL": programURL, "platformName": "Intigriti","isRemoved": False, "isNewProgram": False, "color": 10858237}
+        data = {"programName": programName,"logo":"https://www.intigriti.com/_next/image?url=https%3A%2F%2Fwww.datocms-assets.com%2F85623%2F1709805387-researcher-sklon-31ljf.png&w=1080&q=75", "programType": "", "programURL": programURL, "platformName": "Intigriti","isRemoved": False, "isNewProgram": False, "color": 10858237}
         dataJson = {"programName": programName,
                     "programURL": programURL, "programType": "", "scope": {}, "reward": {}}
         programKey = generate_program_key(programName, programURL)
