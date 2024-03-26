@@ -32,13 +32,13 @@ def check_intigriti(tmp_dir, mUrl, first_time, db, config):
             data["isNewProgram"] = True
             watcherData = {"programName": programName,
                            "programURL": programURL, "programType": "", "scope": {}, "reward": {}}
-
-        for target in program['domains']:
-            if target['description'] is not None:
-                dataJson['scope'][target['id']
-                                  ] = f"{target['endpoint']}\n{target['description']}\n"
-            else:
-                dataJson['scope'][target['id']] = f"{target['endpoint']}\n"
+        if program['domains']:
+            for target in program['domains']:
+                if target['description'] is not None:
+                    dataJson['scope'][target['id']
+                                      ] = f"{target['endpoint']}\n{target['description']}\n"
+                else:
+                    dataJson['scope'][target['id']] = f"{target['endpoint']}\n"
         # checking vdp or rdp
         if program["maxBounty"]["value"] > 0:
             dataJson["programType"] = "rdp"
