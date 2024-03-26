@@ -36,9 +36,8 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
                 for item in target["targets"]:
                     dataJson["inScope"].append((item["name"]))
                     
-            print(type(program["rewardSummary"]["minReward"]))
-            print(program["rewardSummary"]["minReward"])
-            if program["rewardSummary"]["minReward"] :
+
+            if program["rewardSummary"] != null:
                 if program["rewardSummary"]["minReward"] == "Points" :
                     dataJson["programType"] = "vdp"
                     data["programType"] = "vdp"
@@ -46,13 +45,13 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
                 elif int(program["rewardSummary"]["minReward"].replace("$", "")) > 0 :
                     dataJson["programType"] = "rdp"
                     data["programType"] = "rdp"
-            else:
-                dataJson["programType"] = "vdp"
-                data["programType"] = "vdp"
-            bounty = {
-                "min": program["rewardSummary"]["minReward"],
-                "max": program["rewardSummary"]["maxReward"]
-            }
+                else:
+                    dataJson["programType"] = "vdp"
+                    data["programType"] = "vdp"
+                bounty = {
+                    "min": program["rewardSummary"]["minReward"],
+                    "max": program["rewardSummary"]["maxReward"]
+                }
             dataJson["reward"] = bounty
         newInScope = [i for i in dataJson["inScope"]
                       if i not in watcherData["inScope"]]
