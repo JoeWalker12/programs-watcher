@@ -36,7 +36,7 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
                 for item in target["targets"]:
                     dataJson["inScope"].append((item["name"]))
 
-            if program["rewardSummary"]["minReward"] != "Points" :
+            if program["rewardSummary"]["minReward"] == "Points" :
                 dataJson["programType"] = "vdp"
                 data["programType"] = "vdp"
                 
