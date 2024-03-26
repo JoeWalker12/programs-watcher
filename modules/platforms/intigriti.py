@@ -32,7 +32,7 @@ def check_intigriti(tmp_dir, mUrl, first_time, db, config):
             data["isNewProgram"] = True
             watcherData = {"programName": programName,
                            "programURL": programURL, "programType": "", "scope": {}, "reward": {}}
-        if program['domains']:
+        if 'domains' in program:
             for target in program['domains']:
                 if target['description'] is not None:
                     dataJson['scope'][target['id']
