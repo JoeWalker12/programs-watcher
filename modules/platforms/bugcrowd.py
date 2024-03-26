@@ -40,7 +40,7 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
                 dataJson["programType"] = "vdp"
                 data["programType"] = "vdp"
                 
-            else if int(program["rewardSummary"]["minReward"].replace("$", "")) > 0 :
+            elif int(program["rewardSummary"]["minReward"].replace("$", "")) > 0 :
                 dataJson["programType"] = "rdp"
                 data["programType"] = "rdp"
             else:
