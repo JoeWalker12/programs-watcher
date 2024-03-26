@@ -15,7 +15,7 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
     for program in bugcrowd:
         programName = program["name"]
         programURL = "https://bugcrowd.com"+program["briefUrl"]
-        logo = program["logo"]
+        logo = program["logoUrl"]
         data = {"programName": programName, "reward": {},"isRemoved": False, "newType": "", "newInScope": [], "removeInScope": [], "newOutOfScope": [], "removeOutOfScope": [], "programURL": programURL,
                 "logo": logo, "platformName": "Bugcrowd", "isNewProgram": False, "color": 14584064}
         dataJson = {"programName": programName, "programURL": programURL, "programType": "",
