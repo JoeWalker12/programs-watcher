@@ -14,10 +14,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Docker
-      uses: docker/setup-docker-action@v2
+      uses: docker/setup-buildx-action@v2  # Sets up Docker (Alternative)
 
-    - name: set up docker compose
-    - uses: docker/compose-action@v2
+    - name: Install Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
     
     - name: Build and Run Docker Compose
       run: docker-compose up -d
