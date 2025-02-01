@@ -27,7 +27,7 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
             data["isNewProgram"] = True
             watcherData = {"programKey": programKey, "programName": programName, "programURL": programURL, "programType": "",
                            "outOfScope": [], "inScope": [], "reward": {}}
-        if program["target_groups"]==null:                                                  #added by pyself
+        if program["target_groups"] is None:                                                  #added by pyself
             continue                                                                        #till here
         for target in program["target_groups"]:
             if target["in_scope"] == False:
