@@ -5,7 +5,7 @@ mongoDB:
   database: programs_watcher
 platforms:
   - name: bugcrowd
-    url: https://raw.githubusercontent.com/Osb0rn3/bugbounty-targets/main/programs/bugcrowd.json
+    url: https://raw.githubusercontent.com/JoeWalker12/bugbounty-targets/main/programs/bugcrowd.json
     monitor:
       rdp: true
       vdp: true
@@ -21,7 +21,7 @@ platforms:
       new_type: true
       new_bounty_table: true
   - name: hackerone
-    url: https://raw.githubusercontent.com/Osb0rn3/bugbounty-targets/main/programs/hackerone.json
+    url: https://raw.githubusercontent.com/JoeWalker12/bugbounty-targets/main/programs/hackerone.json
     monitor:
       rdp: true
       vdp: true
@@ -38,7 +38,7 @@ platforms:
       changed_scope: true
       new_type: true
   - name: intigriti
-    url: https://raw.githubusercontent.com/Osb0rn3/bugbounty-targets/main/programs/intigriti.json
+    url: https://raw.githubusercontent.com/JoeWalker12/bugbounty-targets/main/programs/intigriti.json
     monitor:
       rdp: true
       vdp: true
@@ -53,7 +53,7 @@ platforms:
       new_type: true
       new_bounty_table: true
   - name: yeswehack
-    url: https://raw.githubusercontent.com/Osb0rn3/bugbounty-targets/main/programs/yeswehack.json
+    url: https://raw.githubusercontent.com/JoeWalker12/bugbounty-targets/main/programs/yeswehack.json
     monitor:
       rdp: true
       vdp: true
