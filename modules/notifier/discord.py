@@ -1,5 +1,6 @@
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from modules.notifier.functions import generate_diff, split_text, get_platform_profile, shorten_string
+import time                #added my myself
 
 
 def add_field(embed, data, message, diff=False):
@@ -127,6 +128,7 @@ def send_notification(data, webhook_url):
     if response.status_code != 200:
         print(data["programName"])
         print("Error sending message:", response.content)
+    time.sleep(0.3)                                                #added my myself
 
 def send_startup_message(webhook_url):
     webhook = DiscordWebhook(
