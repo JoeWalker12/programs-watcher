@@ -30,7 +30,7 @@ def check_bugcrowd(tmp_dir, mUrl, first_time, db, config):
         if program["target_groups"] is None or not program.get("target_groups"):
             continue                                                                     
         for target in program["target_groups"]:
-            if target["in_scope"] == False:
+            if target["inScope"] == False:
                 for item in target["targets"]:
                     dataJson["outOfScope"].append(item["name"])
 
